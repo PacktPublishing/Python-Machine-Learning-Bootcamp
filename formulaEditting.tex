@@ -1,0 +1,454 @@
+\documentclass[USenglish,final,authoryear,12pt]{article}
+
+
+
+\usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+ \geometry{
+ 	a4paper,
+ 	total={210mm,297mm},
+ 	left=20mm,
+ 	right=20mm,
+ 	top=20mm,
+ 	bottom=20mm,
+ }
+
+\usepackage{sectsty}
+\usepackage{cancel} %need to use this
+\usepackage{babel}
+%\allsectionsfont{\normalfont\sffamily\bfseries}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{longtable}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.5]{Image1.png}
+%	\caption{Size of observable universe comparison between standard model of cosmology with inflation and without inflation [1].}
+%\end{figure}
+
+\begin{document}
+\begin{align*}
+Loss(\hat{y}_i,y_i) = -\frac{1}{m}\sum_{i=1} ^ m\left[ y_i\cdot\log(\hat{y}_i) + (1-y_i)\cdot\log(1-\hat{y}_i)\right]
+\end{align*}
+
+\begin{align*}
+\hat{y} = \frac{e^{\left(b_0 + X\cdot W\right)}}{1+e^{\left(b_0 + X\cdot W\right)}}
+\end{align*}
+
+\begin{align*}
+	b_0 + X\cdot W \to& \theta^T\cdot X\\
+	=& \theta_0\cdot x_0 + \theta_1\cdot x_1 + \cdots + \theta_n\cdot x_n
+\end{align*}
+
+\begin{align*}
+\to \hat{y} = \frac{e^{\theta^T\cdot X}}{1+e^{\theta^T\cdot X}} \overset{\times \frac{\frac{1}{e^{\theta^T\cdot X}}}{\frac{1}{e^{\theta^T\cdot X}}}}{=} \frac{1}{1+e^{-\theta^T\cdot X}}
+\end{align*}
+
+\begin{align*}
+\hat{y} = \frac{1}{1+e^{-\theta^T\cdot X}}
+\end{align*}
+
+
+\begin{align*}
+J(\theta) = -\frac{1}{m}\sum_{i=1} ^ m\left[ y_i\cdot\log(\hat{y}_i(\theta)) + (1-y_i)\cdot\log(1-\hat{y}_i(\theta))\right]
+\end{align*}
+
+\begin{align*}
+\frac{\partial}{\partial\theta_j}J(\vec{\theta})
+\end{align*}
+
+\begin{align*}
+ = \frac{1}{m}\sum_{i=1}^{m}\left(\hat{y_i}-y_i\right)x_{i,j}
+\end{align*}
+
+\begin{align*}
+	\theta_j \to \theta_j - \eta\cdot\frac{\partial}{\partial\theta_j}J(\vec{\theta})
+\end{align*}
+
+\begin{align*}
+	f=\frac{2}{\frac{1}{\text{Precision}}+\frac{1}{\text{Recall}}}
+\end{align*}
+
+\begin{align*}
+	\text{Log loss} &= -y_i\cdot\log(\hat{y_i}) - (1-y_i)\cdot\log(1-\hat{y_i})\\
+	-\sum_{s=1}^{C=2}y_{s,i}\cdot\log(\hat{y}_{s,i})&=-y_{1,i}\cdot\log(\hat{y}_{1,i})-y_{2,i}\cdot\log(\hat{y}_{2,i})\\
+	&y_{1,i} = (1-y_{2,i})\\
+	&\hat{y}_{1,i} = (1-\hat{y}_{2,i})
+\end{align*}
+
+\begin{align*}
+	\sum_{s=1}^{C=2}y_{s,i}\cdot\log(\hat{y}_{s,i}) \to \sum_{s=1}^{C=N}y_{s,i}\cdot\log(\hat{y}_{s,i})
+\end{align*}
+
+\begin{align*}
+	extra=\lambda \sum_{i=1}^{n}\theta_i^2
+\end{align*}
+\begin{align*}
+	extra=\frac{\lambda }{2}\sum_{i=1}^{n}\theta_i^2
+\end{align*}
+
+\begin{align*}
+extra=\lambda\sum_{i=1}^{n}|\theta_i|
+\end{align*}
+
+\begin{align*}
+	extra=r\lambda\sum_{i=1}^{n}|\theta_i|+(1-r)\cdot\frac{\lambda }{2}\sum_{i=1}^{n}\theta_i^2
+\end{align*}
+
+\begin{align*}
+\frac{\partial}{\partial \theta} \to \lambda \sum_{i=1}^{n}\theta_i
+\end{align*}
+
+\begin{align*}
+	loss &= \max(0, 1 - t_i\cdot \hat{y}_i);~ t_i = \pm 1
+\end{align*}
+
+\begin{align*}
+	\hat{y} &= 0 \text{ if } \vec{w}\cdot\vec{x} + b < 0\\
+	\hat{y} &= 1 \text{ if } \vec{w}\cdot\vec{x} + b \geq 0\\	
+\end{align*}
+
+\begin{align*}
+	\textbf{Minimze } \frac{1}{2}\vec{w}^2 + C\sum_{i=1}^{m}\zeta_i;~\text{ for }\vec{w}, b, \zeta\\
+	\textbf{constrained by } t_i(\vec{w}\cdot x_i + b)\geq 1-\zeta_i
+\end{align*}
+
+\begin{align*}
+	K(x, x') = x\cdot x'
+\end{align*}
+
+\begin{align*}
+	K(x, x') = \left(\gamma x\cdot x' + c \right)^d
+\end{align*}
+
+\begin{align*}
+	K(x, x') = exp(-\gamma ||x - x'||^2)
+\end{align*}
+
+\begin{align*}
+	K(x, x') = \tanh(\gamma x\cdot x' + c)
+\end{align*}
+
+\begin{align*}
+	d_m = |x_1-x_2| + |y_1 - y_2|
+\end{align*}
+\begin{align*}
+	d_e = \sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}
+\end{align*}
+\begin{align*}
+	d_L &= \sqrt[m]{(x_1-x_2)^m + (y_1 - y_2)^m}\\
+	d_L &= \left(|x_1-x_2|^m + |y_1 - y_2|^m\right)^{\frac{1}{m}}
+\end{align*}
+
+\begin{align*}
+	G = 1 - \sum_{i = 1}^{K}p^2_i
+\end{align*}
+\begin{align*}
+	p_i
+\end{align*}
+\begin{align*}
+	H = - \sum_{i = 1}^{K}p_i\log_2 p_i
+\end{align*}
+
+\begin{align*}
+	J = \frac{n_{left}}{N}\cdot G_{left} + \frac{n_{right}}{N}\cdot G_{right}
+\end{align*}
+
+
+\begin{align*}
+	R_\alpha(T) = R(T) + \alpha |T|
+\end{align*}
+
+\begin{align*}
+	P(y|x_1,...x_n) &= \frac{P(x_1, ... ,x_n|y)P(y)}{P(x_1,...,x_n)}
+\end{align*}
+\begin{align*}
+	P(x_i|y,x_1,...,x_{i-1},x_{i+1},...,x_n) &= P(x_i|y)\\
+\end{align*}
+\begin{equation*}
+ a_{i}
+\end{equation*}
+\begin{align*}
+	P(y|x_1,...x_n) &= P(y)\frac{\prod_{i=1}^{n}P(x_i|y)}{P(x_1,...,x_n)}
+\end{align*}
+
+\begin{align*}
+	p(x_i|y) &= \frac{1}{\sqrt{2\pi\sigma_y^2}}\exp\left(-\frac{(x_i-\mu_y)^2}{2\sigma_y^2}\right)
+\end{align*}
+\begin{align*}
+	P(x_i|y) &= \frac{x_i}{N}\\
+	\to P(x_i|y) &= \frac{x_i + \alpha}{N + \alpha\cdot n}
+\end{align*}
+\begin{align*}
+	P(x_i|y) &= \frac{N_{x_i,y}}{N_y}\\
+	\to P(x_i|y) &= \frac{N_{x_i,y} + \alpha}{N_y + \alpha\cdot n}
+\end{align*}
+
+
+\begin{align*}
+	\hat{y} &= \theta_0 + \theta_1\cdot x_1 + \dots + \theta_m\cdot x_m +\vec{\epsilon} \\
+	\hat{y} &= \vec{X}^T \cdot \vec{\theta}+\vec{\epsilon}\\
+	\vec{\theta} &=~\text{weights}\\
+	\hat{y} &=~\text{prediction}\\
+	\vec{X} &=~\text{features}\\
+	\vec{\epsilon} &=~\text{error}
+\end{align*}
+
+\begin{align*}
+	MSE = \frac{1}{n}\sum_{i = 1}^{n}\left(y_i-\hat{y}_i\right)^2
+\end{align*}
+
+\begin{align*}
+	MAE = \frac{1}{n}\sum_{i = 1}^{n}\left|y_i-\hat{y}_i\right|
+\end{align*}
+
+\begin{align*}
+	P(A|B) &= \frac{P(A\cap B)}{P(B)}
+\end{align*}
+\begin{align*}
+	P(A) &- \text{ probability of A}\\
+	P(B) &- \text{ probability of B}\\
+	P(A\cap B) &- \text{ probability of A \& B}\\
+	P(A|B) &- \text{ probability of A given B}\\
+\end{align*}
+
+\begin{align*}
+	P(F) &= \frac{63+18}{96} = \frac{81}{96}\\
+	P(NF) &= \frac{15+18}{96} = \frac{33}{96}\\
+	P(F\cap NF) &= \frac{18}{96}
+\end{align*}
+
+\begin{align*}
+	P(F|NF) &= \frac{P(F\cap NF)}{P(NF)} = \frac{18}{33}\\
+	P(NF|F) &= \frac{P(F\cap NF)}{P(F)} = \frac{18}{81}\\
+\end{align*}
+
+\begin{align*}
+	P(A | B) &= \frac{P(B | A)}{P(B)}\cdot P(A)
+\end{align*}
+
+\begin{align*}
+P(A) &- \text{ probability of A}\\
+P(B) &- \text{ probability of B}\\
+P(B|A) &- \text{ probability of B given A}\\
+P(A|B) &- \text{ probability of A given B}\\
+\end{align*}
+
+\begin{align*}
+P(C | +) &= \frac{P(+ | C)}{P(+)}\cdot P(C) = \frac{0.995}{0.03193}\cdot 0.002 = 0.062
+\end{align*}
+\begin{align*}
+	\beta &: \text{ false negative rate}\\
+	\text{power }&=1-\beta\\
+	\text{power }&=Pr(\text{reject }H_0~|~H_1\text{ true})
+\end{align*}
+
+\begin{align*}
+	y_{i,t}&~~~\text{i = class, t = time}\\
+	\bar{y}_{i,t}&~~~\text{mean of }y_{i,t}\\
+	\delta &= (\bar{y}_{11} - \bar{y}_{12}) - (\bar{y}_{21} - \bar{y}_{22})
+\end{align*}
+
+
+\begin{align*}
+	d &= \frac{\mu_1 - \mu_2}{s}\\
+	&\\
+	s &= \sqrt{\frac{(n_1 - 1)\sigma_1^2 + (n_2-1)\sigma_2^2}{n_1+n_2-2}}
+\end{align*}
+
+\begin{align*}
+	n = \left(\frac{2\cdot z\cdot\sigma}{W}\right)^2
+\end{align*}
+
+\begin{align*}
+	n = \left(\frac{Z_{1-\frac{\alpha}{2}}+Z_{1-\beta}}{\delta}\right)^2
+\end{align*}
+\[
+L_{h,i}= 
+\begin{cases}
+\frac{1}{2}\left(y_i-\hat{y}_i\right)^2,& \text{if } |y_i-\hat{y}_i|\leq \epsilon\\
+\epsilon(|y_i-\hat{y}_i|-\frac{\epsilon}{2}),              & \text{otherwise}
+\end{cases}
+\]
+
+\[
+L_{ei,i}= 
+\begin{cases}
+0,& \text{if } |y_i-\hat{y}_i|\leq \epsilon\\
+|y_i-\hat{y}_i|,              & \text{otherwise}
+\end{cases}
+\]
+\[
+L_{sei,i}= 
+\begin{cases}
+0,& \text{if } |y_i-\hat{y}_i|\leq \epsilon\\
+\left(y_i-\hat{y}_i\right)^2,              & \text{otherwise}
+\end{cases}
+\]
+
+\begin{align*}
+	\eta = \text{const.}
+\end{align*}
+\begin{align*}
+\eta \to \frac{\eta}{k}
+\end{align*}
+\begin{align*}
+\eta = \frac{\text{const.}}{\left(1+\frac{t}{k}\right)^{t_0}}
+\end{align*}
+\begin{align*}
+\eta = \frac{\text{const.}}{\beta\left(t+t_0\right)}
+\end{align*}
+
+\begin{align*}
+	\bar{y}_n &= \frac{1}{N_n}\sum_{i\in N_n}y_i\\
+	\text{MSE} &= \frac{1}{N_n}\sum_{i\in N_n}(\hat{y}_i - \bar{y}_n)^2\\
+	J &= \frac{n_{left}}{N}\cdot \text{MSE}_{left} + \frac{n_{right}}{N}\cdot \text{MSE}_{right}
+\end{align*}
+
+\begin{align*}
+	R^2 &= 1 - \frac{\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2}{\sum_{i=1}^{n}\left(y_i - \bar{y}_i\right)^2}
+\end{align*}
+\begin{align*}
+	\hat{y}_{diff} &= \frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)\\
+	\text{Exp. Var} &= 1 - \frac{\sum_{i=1}^{n}\left((y_i - \hat{y}_i) - \hat{y}_{diff}\right)^2}{\sum_{i=1}^{n}\left(y_i - \bar{y}_i\right)^2}
+\end{align*}
+
+\begin{align*}
+	F_m(X) &= F_{m-1}(X) + \nu \hat{y}_m(X)\\
+	\hat{y}_1(X)&\\
+	\hat{y}_2(X)&\\
+	\hat{y}_3(X)&
+\end{align*}
+
+\begin{align*}
+	w_{est. i} &= \nu \log\left(\frac{1-r_i}{r_i}\right)
+\end{align*}
+
+\begin{align*}
+	X &= USV^H\\
+	s^2&=\text{ eigenvalues}\\
+	\text{columns of }U&=\text{ eigenvectors of }XX^H\\
+	\text{rows of }V^H&=\text{ eigenvectors of }X^HX\\
+	\text{with }&\frac{1}{N}\sum_{i=1}^{N}\hat{x}_i=0
+\end{align*}
+
+\begin{align*}
+	P_d &= X \cdot \left(V_d^H\right)^T\\
+	X_{rec} &= P_d \cdot V_d^H
+\end{align*}
+
+\begin{align*}
+	X &= W\cdot H\\
+	& X^{m \times n}\\
+	& H^{k \times n}\\
+	& W^{m \times k} 
+\end{align*}
+
+\begin{align*}
+	d_{Frob}(X,WH) = SE_{Frob.} &= \frac{1}{2}\sum_{i, j}\left(X_{i,j} - (WH)_{i,j}\right)^2\\
+\end{align*}
+\begin{align*}
+d_{Frob}(X,WH) & \\
+&+ \lambda \sum_{i,j}|W_{i,j}|\\
+&+ \lambda \sum_{i,j}|H_{i,j}|\\
+\end{align*}
+\begin{align*}
+d_{Frob}(X,WH) & \\
+&+ \frac{1}{2}\lambda \sum_{i,j}\left(W_{i,j}\right)^2\\
+&+ \frac{1}{2}\lambda \sum_{i,j}\left(H_{i,j}\right)^2\\
+\end{align*}
+\begin{align*}
+&d_{Frob}(X,WH) \\
+&+ r \left(\lambda \sum_{i,j}|W_{i,j}|
++ \lambda \sum_{i,j}|H_{i,j}|\right)\\
+&+ (1-r)\left(\frac{1}{2}\lambda \sum_{i,j}\left(W_{i,j}\right)^2
++ \frac{1}{2}\lambda \sum_{i,j}\left(H_{i,j}\right)^2\right)\\
+\end{align*}
+
+\begin{align*}
+	\delta_{i,j}^2 &= (x_{i}-x_j)(x_{i}-x_j)^T\\
+	\hat{\delta}_{i,j}^2 &= (\hat{x}_{i}-\hat{x}_j)(\hat{x}_{i}-\hat{x}_j)^T\\
+	Loss &= \sum_{i<j}\left(\delta_{i,j}-\hat{\delta}_{i,j}\right)^2\\
+	&x_i\\
+	&\hat{x}_i\\
+	&\delta^2_{i,j}\\
+	&\hat{\delta}^2_{i,j}\\
+	\hat{X} &= XV
+\end{align*}
+
+\begin{align*}
+	Loss &= \sum_{i=1}^{m} \left(\hat{X}_i - \sum_{j=1, i\neq j}^{m}W_{i,j}X_{j}\right)^2\\
+	\sum_{j}W_{i,j} &= 1
+\end{align*}
+
+\begin{align*}
+	Loss &= \sum_{i=1}^{m}\left(Y_i - \sum_{i=1,i\neq j}^m W_{i,j}Y_j\right)^2\\
+	\text{with }&W_{i,j}\text{ fixed}\\
+\end{align*}
+
+\begin{align*}
+	Loss &= \sum_{i=1}^{m}\sum_{l=1}^{s_i}\left(Y_i - \sum_{i=1,i\neq j}^m W^{(l)}_{i,j}Y_j\right)^2\\
+\end{align*}
+
+\begin{align*}
+	p_{j|i;i\neq j} &= \frac{\exp\left(-\frac{(\hat{x}_i-\hat{x}_j)^2}
+		{2\sigma_i}\right)}{\sum_{k\neq i}\exp\left(-\frac{(\hat{x}_i-\hat{x}_k)^2}
+		{2\sigma_i}\right)}\\
+	\sum_{j}p_{j|i}&=1 \forall i\\
+	p_{ij} &= \frac{p_{j|i}+p_{i|j}}{2m}
+\end{align*}
+\begin{align*}
+	PP(p) &= 2^{-\sum_{i}p(i)\log_2p(i)}\\
+	\sigma_i
+\end{align*}
+
+\begin{align*}
+	q_{ij} &= \frac{\frac{1}{1+\left(\hat{y}_i - \hat{y}_j\right)^2}}{\sum_{k\neq i}\frac{1}{1+\left(\hat{y}_i - \hat{y}_k\right)^2}}
+\end{align*}
+
+\begin{align*}
+	KL(P,Q) &= \sum_{i\neq j}p_{i,j}\log\left(\frac{p_{i,j}}{q_{i,j}}\right)
+\end{align*}
+
+\begin{align*}
+	P ~\star= E_e
+\end{align*}
+
+\begin{align*}
+	\text{Inertia} &= \sum_{i=1}^{m}\min_{u_j \in C} \left[\left(x_i - \mu_j\right)^2\right]\\
+	\mu_j & \text{ cluster j centroid}\\
+	C&\text{ set of clusters}
+\end{align*}
+
+\begin{align*}
+	V &= \frac{\left(1+\beta\right)\cdot\text{homogeneity}\cdot\text{completeness}}{\beta \cdot \text{homogeneity}+\text{completeness}}\\
+	\beta & \text{ - homog.}\leftrightarrow\text{complete. trade-off}
+\end{align*}
+
+\begin{align*}
+	s &= \frac{b-a}{max(a,b)}
+\end{align*}
+
+\begin{align*}
+	L(\hat{\Theta}; \hat{X}, \hat{Z}) &= p(\hat{X},\hat{Z} | \hat{\Theta})
+\end{align*}
+
+\begin{align*}
+	\text{argmax}_{\Theta}\left(E_{\hat{Z}|\hat{X},\hat{\Theta}}\log L(\hat{\Theta}; \hat{X}, \hat{Z})\right)
+\end{align*}
+
+\begin{align*}
+	\text{AIC} &= 2k - 2\ln(\hat{L})\\
+	k &= \text{ num. param in model}\\
+	\hat{L} &= \text{ maximum likelihood function value}
+\end{align*}
+
+\begin{align*}
+\text{BIC} &= k\ln m - 2\ln(\hat{L})\\
+k &= \text{ num. param in model}\\
+\hat{L} &= \text{ maximum likelihood function value}\\
+m &= \text{ sample size}
+\end{align*}
+\end{document}
+

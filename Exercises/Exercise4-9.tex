@@ -1,0 +1,37 @@
+\documentclass[USenglish,final,authoryear,12pt]{article}
+
+
+
+\usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+ \geometry{
+ 	a4paper,
+ 	total={210mm,297mm},
+ 	left=20mm,
+ 	right=20mm,
+ 	top=20mm,
+ 	bottom=20mm,
+ }
+
+\usepackage{sectsty}
+\usepackage{cancel} %need to use this
+\usepackage{babel}
+%\allsectionsfont{\normalfont\sffamily\bfseries}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{longtable}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.5]{Image1.png}
+%	\caption{Size of observable universe comparison between standard model of cosmology with inflation and without inflation [1].}
+%\end{figure}
+
+\begin{document}
+\begin{enumerate}
+	\item In the KNN regression lecture code re-write the cross validation by hand so that we can perform the pipeline fit transform inside of our custom cross validation, rather than before, so that we don’t contaminate our validation set by having fit\_transformed the whole X\_train feature set before splitting into X\_train\_val and X\_val and then only fit\_transforming the X\_train\_val and calling transform on X\_val\newline\linebreak
+	You don't need to implement all the parameters or return options, just what we use for plotting (test\_score, train\_score, fit\_time) and so that we can use the pipeline internally after creating our validation split.\newline\linebreak
+	\textbf{Tip:} You can use sklearn.base.clone to create a fresh \& unfitted version of the estimator that has the same parameters. This also works on pipelines.
+\end{enumerate}
+\end{document}
+
